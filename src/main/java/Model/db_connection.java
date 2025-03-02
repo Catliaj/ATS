@@ -18,7 +18,7 @@ public class db_connection{
 			
 			connection = DriverManager.getConnection
 		    (
-		       "jdbc:mysql://localhost:3306/ats", 
+		       "jdbc:mysql://localhost:3306/atss", 
 		       "root", 
 		       "" 	
 			);	
@@ -46,7 +46,7 @@ public class db_connection{
 			
 			connection = DriverManager.getConnection
 				    (
-				       "jdbc:mysql://localhost:3306/ats", 
+				       "jdbc:mysql://localhost:3306/atss", 
 				       "root", 
 				       "" 	
 					);	

@@ -354,12 +354,16 @@ public class Student_Checks extends JFrame {
 	            try {
 	                // Capture an image from the webcam
 	                BufferedImage image = webcam.getImage();
-
+	                
+	                BufferedImage flippedImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+	                Graphics g = flippedImage.getGraphics();
+	                g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), image.getWidth(), 0, 0, image.getHeight(), null);
+	                g.dispose();
+	                
 	                // Convert the image to grayscale
-	                BufferedImage grayscaleImage = new BufferedImage(
-	                    image.getWidth(), image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
-	                Graphics g = grayscaleImage.getGraphics();
-	                g.drawImage(image, 0, 0, null);
+	                BufferedImage grayscaleImage = new BufferedImage(flippedImage.getWidth(), flippedImage.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
+	                g = grayscaleImage.getGraphics();
+	                g.drawImage(flippedImage, 0, 0, null);
 	                g.dispose();
 
 	                // Decode the QR code from the grayscale image
@@ -404,6 +408,7 @@ public class Student_Checks extends JFrame {
 	                isScanning = false;
 	                Thread.sleep(10000); // 10-second delay
 	                clearTextFields(); // Clear text fields
+	                txtCheckedin.setBackground(new Color(255, 214, 0));
 	                isScanning = true; // Resume scanning
 	            } catch (NotFoundException e) {
 	                // QR code not found, continue scanning

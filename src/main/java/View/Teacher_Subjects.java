@@ -16,6 +16,8 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import Controller.subjectController;
+import Model.subjectsQuery;
 
 import Controller.SidePanelButtonActionListener;
 
@@ -27,9 +29,9 @@ public class Teacher_Subjects extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField_Subject;
-	private JTextField textField_End;
-	private JTextField textField_Start;
+	public JTextField textField_Subject;
+	public JTextField textField_Start;
+	public JTextField textField_End;
 	private JTable table;
 	public JButton btn_Dashboard;
 	public JButton btn_Attendance;
@@ -37,7 +39,15 @@ public class Teacher_Subjects extends JFrame {
 	public JButton btn_Enrollment;
 	public JButton btn_Classes;
 	public JButton btn_Exit;
-
+	
+	
+	public JButton btn_Update;
+	public JButton btn_Delete;
+	public JButton btn_Clear;
+	public JButton btn_Add;
+	
+	subjectsQuery populate = new subjectsQuery();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -145,7 +155,7 @@ public class Teacher_Subjects extends JFrame {
 		lbl_Subject.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Subject.setForeground(Color.WHITE);
 		lbl_Subject.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Subject.setBounds(315, 153, 131, 35);
+		lbl_Subject.setBounds(336, 150, 100, 32);
 		panel.add(lbl_Subject);
 		
 		textField_Subject = new JTextField();
@@ -153,16 +163,16 @@ public class Teacher_Subjects extends JFrame {
 		textField_Subject.setFont(new Font("Bahnschrift", Font.BOLD, 15));
 		textField_Subject.setColumns(10);
 		textField_Subject.setBackground(new Color(255, 242, 226));
-		textField_Subject.setBounds(315, 181, 171, 25);
+		textField_Subject.setBounds(336, 181, 215, 32);
 		panel.add(textField_Subject);
 		
 		
 		
-		JLabel lbl_Start = new JLabel("Start-time::");
+		JLabel lbl_Start = new JLabel("Start-time:");
 		lbl_Start.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Start.setForeground(Color.WHITE);
 		lbl_Start.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Start.setBounds(315, 215, 131, 35);
+		lbl_Start.setBounds(336, 249, 131, 35);
 		panel.add(lbl_Start);
 		
 		textField_Start = new JTextField();
@@ -170,7 +180,7 @@ public class Teacher_Subjects extends JFrame {
 		textField_Start.setFont(new Font("Bahnschrift", Font.BOLD, 15));
 		textField_Start.setColumns(10);
 		textField_Start.setBackground(new Color(255, 242, 226));
-		textField_Start.setBounds(315, 244, 171, 25);
+		textField_Start.setBounds(336, 277, 178, 32);
 		panel.add(textField_Start);
 		
 		
@@ -179,7 +189,7 @@ public class Teacher_Subjects extends JFrame {
 		lbl_End.setVerticalAlignment(SwingConstants.TOP);
 		lbl_End.setForeground(Color.WHITE);
 		lbl_End.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_End.setBounds(315, 279, 147, 35);
+		lbl_End.setBounds(336, 338, 147, 35);
 		panel.add(lbl_End);
 		
 		textField_End = new JTextField();
@@ -187,36 +197,36 @@ public class Teacher_Subjects extends JFrame {
 		textField_End.setFont(new Font("Bahnschrift", Font.BOLD, 15));
 		textField_End.setColumns(10);
 		textField_End.setBackground(new Color(255, 242, 226));
-		textField_End.setBounds(315, 307, 171, 25);
+		textField_End.setBounds(336, 368, 178, 32);
 		panel.add(textField_End);
 		
 		
 		
-		JButton btn_Update = new JButton("Update");
+	    btn_Update = new JButton("Update");
 		btn_Update.setForeground(new Color(255, 214, 0));
 		btn_Update.setFont(new Font("Bahnschrift", Font.BOLD, 13));
 		btn_Update.setFocusPainted(false);
 		btn_Update.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Update.setBackground(new Color(174, 122, 52));
-		btn_Update.setBounds(370, 361, 92, 20);
+		btn_Update.setBounds(324, 480, 116, 33);
 		panel.add(btn_Update);
 		
-		JButton btn_Delete = new JButton("Delete");
+		btn_Delete = new JButton("Delete");
 		btn_Delete.setForeground(new Color(255, 214, 0));
 		btn_Delete.setFont(new Font("Bahnschrift", Font.BOLD, 13));
 		btn_Delete.setFocusPainted(false);
 		btn_Delete.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Delete.setBackground(new Color(174, 122, 52));
-		btn_Delete.setBounds(370, 391, 92, 20);
+		btn_Delete.setBounds(449, 480, 116, 32);
 		panel.add(btn_Delete);
 		
-		JButton btn_Clear = new JButton("Clear");
+	    btn_Clear = new JButton("Clear");
 		btn_Clear.setForeground(new Color(255, 214, 0));
 		btn_Clear.setFont(new Font("Bahnschrift", Font.BOLD, 13));
 		btn_Clear.setFocusPainted(false);
 		btn_Clear.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Clear.setBackground(new Color(174, 122, 52));
-		btn_Clear.setBounds(370, 421, 92, 20);
+		btn_Clear.setBounds(390, 539, 116, 32);
 		panel.add(btn_Clear);
 		
 		
@@ -245,6 +255,17 @@ public class Teacher_Subjects extends JFrame {
 				"Subject", "Start-time", "End-time"
 			}
 		));
+		populate.populateTable(table);
+		table.addMouseListener(new java.awt.event.MouseAdapter() {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				int row = table.rowAtPoint(evt.getPoint());
+				textField_Subject.setText(table.getValueAt(row, 0).toString());
+				textField_Start.setText(table.getValueAt(row, 1).toString());
+				textField_End.setText(table.getValueAt(row, 2).toString());
+			}
+		});
+		
 		
 		JTableHeader tableHeader = table.getTableHeader();
 		tableHeader.setFont(new Font("Bahnschrift", Font.BOLD, 17));
@@ -255,6 +276,59 @@ public class Teacher_Subjects extends JFrame {
 		table.setGridColor(new Color(255, 214, 0));
 		scrollPane.setViewportView(table);
 		
+		
+		JLabel lbl_Logo = new JLabel("");
+		lbl_Logo.setIcon(new ImageIcon(Teacher_Attendance.class.getResource("/Resources/Logo_Small.png")));
+		lbl_Logo.setBounds(77, 17, 105, 125);
+		panel.add(lbl_Logo);
+		
+		JLabel lbl_ABM_1 = new JLabel("ATTENDANCE TRACKER");
+		lbl_ABM_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_ABM_1.setForeground(Color.WHITE);
+		lbl_ABM_1.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		lbl_ABM_1.setBounds(40, 138, 184, 25);
+		panel.add(lbl_ABM_1);
+		
+		JLabel lbl_ABM_2 = new JLabel("SYSTEM");
+		lbl_ABM_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_ABM_2.setForeground(Color.WHITE);
+		lbl_ABM_2.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		lbl_ABM_2.setBounds(41, 158, 184, 25);
+		panel.add(lbl_ABM_2);
+		
+		JLabel lbl_TeacherIcon = new JLabel("");
+		lbl_TeacherIcon.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
+		lbl_TeacherIcon.setBounds(647, 66, 76, 47);
+		panel.add(lbl_TeacherIcon);
+		
+		JLabel lbl_HeaderTitle = new JLabel("Class Subjects");
+		lbl_HeaderTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_HeaderTitle.setForeground(Color.WHITE);
+		lbl_HeaderTitle.setFont(new Font("Brush Script MT", Font.BOLD, 50));
+		lbl_HeaderTitle.setBounds(733, 44, 426, 54);
+		panel.add(lbl_HeaderTitle);
+		
+		JLabel lbl_HeaderTitle_Shadow = new JLabel("Class Subjects");
+		lbl_HeaderTitle_Shadow.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_HeaderTitle_Shadow.setForeground(new Color(57, 57, 57));
+		lbl_HeaderTitle_Shadow.setFont(new Font("Brush Script MT", Font.BOLD, 50));
+		lbl_HeaderTitle_Shadow.setBounds(735, 46, 426, 54);
+		panel.add(lbl_HeaderTitle_Shadow);
+		
+		JLabel lbl_TeacherIcon_2 = new JLabel("");
+		lbl_TeacherIcon_2.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
+		lbl_TeacherIcon_2.setBounds(1169, 66, 76, 47);
+		panel.add(lbl_TeacherIcon_2);
+		
+	    btn_Add = new JButton("Add");
+		btn_Add.setForeground(new Color(255, 214, 0));
+		btn_Add.setFont(new Font("Bahnschrift", Font.BOLD, 13));
+		btn_Add.setFocusPainted(false);
+		btn_Add.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
+		btn_Add.setBackground(new Color(174, 122, 52));
+		btn_Add.setBounds(390, 437, 116, 33);
+		panel.add(btn_Add);
+		
 		//side panel action button
 		
 		SidePanelButtonActionListener controller = new SidePanelButtonActionListener(this);
@@ -264,6 +338,10 @@ public class Teacher_Subjects extends JFrame {
 		btn_Enrollment.addActionListener(controller);
 		btn_Classes.addActionListener(controller);
 		btn_Exit.addActionListener(controller);
+		
+		subjectController subjectController = new subjectController(this);
+		btn_Update.addActionListener(subjectController);
+		btn_Delete.addActionListener(subjectController);
+		btn_Clear.addActionListener(subjectController);
 	}
-
 }

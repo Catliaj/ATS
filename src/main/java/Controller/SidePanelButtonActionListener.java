@@ -42,6 +42,7 @@ public class SidePanelButtonActionListener implements ActionListener {
         {
             switchView(new Login_Menu());
         }
+        
     }
 
     private void switchView(Object newView) 

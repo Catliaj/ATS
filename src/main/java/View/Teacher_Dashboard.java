@@ -27,6 +27,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import Model.db_connection;
+import javax.swing.SwingConstants;
 
 public class Teacher_Dashboard extends JFrame {
 
@@ -133,6 +134,49 @@ public class Teacher_Dashboard extends JFrame {
         btn_Exit.setBorder(BorderFactory.createLineBorder(new Color(174, 122, 52), 4));
         btn_Exit.setBounds(10, 636, 251, 69);
         panel.add(btn_Exit);
+        
+        JLabel lbl_Logo = new JLabel("");
+		lbl_Logo.setIcon(new ImageIcon(Teacher_Attendance.class.getResource("/Resources/Logo_Small.png")));
+		lbl_Logo.setBounds(77, 17, 105, 125);
+		panel.add(lbl_Logo);
+		
+		JLabel lbl_ABM_1 = new JLabel("ATTENDANCE TRACKER");
+		lbl_ABM_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_ABM_1.setForeground(Color.WHITE);
+		lbl_ABM_1.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		lbl_ABM_1.setBounds(40, 138, 184, 25);
+		panel.add(lbl_ABM_1);
+		
+		JLabel lbl_ABM_2 = new JLabel("SYSTEM");
+		lbl_ABM_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_ABM_2.setForeground(Color.WHITE);
+		lbl_ABM_2.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		lbl_ABM_2.setBounds(41, 158, 184, 25);
+		panel.add(lbl_ABM_2);
+		
+		JLabel lbl_TeacherIcon = new JLabel("");
+		lbl_TeacherIcon.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
+		lbl_TeacherIcon.setBounds(495, 67, 76, 47);
+		panel.add(lbl_TeacherIcon);
+		
+		JLabel lbl_HeaderTitle = new JLabel("Dashboard");
+		lbl_HeaderTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_HeaderTitle.setForeground(Color.WHITE);
+		lbl_HeaderTitle.setFont(new Font("Brush Script MT", Font.BOLD, 50));
+		lbl_HeaderTitle.setBounds(581, 46, 426, 54);
+		panel.add(lbl_HeaderTitle);
+		
+		JLabel lbl_HeaderTitle_Shadow = new JLabel("Dashboard");
+		lbl_HeaderTitle_Shadow.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_HeaderTitle_Shadow.setForeground(new Color(57, 57, 57));
+		lbl_HeaderTitle_Shadow.setFont(new Font("Brush Script MT", Font.BOLD, 50));
+		lbl_HeaderTitle_Shadow.setBounds(583, 48, 426, 54);
+		panel.add(lbl_HeaderTitle_Shadow);
+		
+		JLabel lbl_TeacherIcon_2 = new JLabel("");
+		lbl_TeacherIcon_2.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
+		lbl_TeacherIcon_2.setBounds(1017, 67, 76, 47);
+		panel.add(lbl_TeacherIcon_2);
 
         JComboBox<String> comboBox = new JComboBox<>();
         comboBox.setFont(new Font("Bahnschrift", Font.BOLD, 20));
