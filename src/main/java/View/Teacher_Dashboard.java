@@ -177,17 +177,60 @@ public class Teacher_Dashboard extends JFrame {
 		lbl_TeacherIcon_2.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
 		lbl_TeacherIcon_2.setBounds(1017, 67, 76, 47);
 		panel.add(lbl_TeacherIcon_2);
+        
+		
+		
+        JComboBox<String> comboBox_Pie = new JComboBox<String>();
+        comboBox_Pie.setModel(new DefaultComboBoxModel(new String[] {"Filter By Date..."}));
+        comboBox_Pie.setForeground(new Color(57, 57, 57));
+        comboBox_Pie.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+        comboBox_Pie.setBorder(BorderFactory.createLineBorder(new Color(57, 57, 57), 4));
+        comboBox_Pie.setBackground(new Color(255, 214, 0));
+        comboBox_Pie.setBounds(313, 138, 155, 32);
+        panel.add(comboBox_Pie);
+        
+        JPanel panel_AttendancePie = new JPanel();
+        panel_AttendancePie.setBackground(new Color(0, 0, 0));
+        panel_AttendancePie.setBounds(328, 221, 204, 204);
+        panel.add(panel_AttendancePie);
+        
+        JPanel panel_RemarksPie = new JPanel();
+        panel_RemarksPie.setBackground(new Color(0, 0, 0));
+        panel_RemarksPie.setBounds(328, 441, 204, 204);
+        panel.add(panel_RemarksPie);
+        
+        
 
         JComboBox<String> comboBox = new JComboBox<>();
-        comboBox.setFont(new Font("Bahnschrift", Font.BOLD, 20));
+        comboBox.setFont(new Font("Bahnschrift", Font.BOLD, 15));
         comboBox.setBackground(new Color(255, 214, 0));
         comboBox.setForeground(new Color(57, 57, 57));
         comboBox.setModel(new DefaultComboBoxModel<>(new String[] {"Filter by Day", "Filter by Week", "Filter by Month"}));
         comboBox.setBorder(BorderFactory.createLineBorder(new Color(57, 57, 57), 4));
-        comboBox.setBounds(404, 136, 224, 43);
+        comboBox.setBounds(555, 138, 155, 32);
         panel.add(comboBox);
+        
+        JPanel panel_AttendanceLine = new JPanel();
+        panel_AttendanceLine.setBackground(new Color(0, 0, 0));
+        panel_AttendanceLine.setBounds(571, 188, 675, 246);
+        panel.add(panel_AttendanceLine);
+        
+        JPanel panel_RemarksLine = new JPanel();
+        panel_RemarksLine.setBackground(new Color(0, 0, 0));
+        panel_RemarksLine.setBounds(571, 440, 675, 246);
+        panel.add(panel_RemarksLine);
+        
+        
+        
+        SidePanelButtonActionListener controller = new SidePanelButtonActionListener(this);
+        btn_Dashboard.addActionListener(controller);
+        btn_Attendance.addActionListener(controller);
+        btn_ClassRoll.addActionListener(controller);
+        btn_Enrollment.addActionListener(controller);
+        btn_Classes.addActionListener(controller);
+        btn_Exit.addActionListener(controller);
 
-        comboBox.addActionListener(new ActionListener() {
+        /*comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedFilter = (String) comboBox.getSelectedItem();
@@ -217,16 +260,9 @@ public class Teacher_Dashboard extends JFrame {
         // Fetch and display enrollment data
         updateEnrollmentData("Filter by Day");
 
-        SidePanelButtonActionListener controller = new SidePanelButtonActionListener(this);
-        btn_Dashboard.addActionListener(controller);
-        btn_Attendance.addActionListener(controller);
-        btn_ClassRoll.addActionListener(controller);
-        btn_Enrollment.addActionListener(controller);
-        btn_Classes.addActionListener(controller);
-        btn_Exit.addActionListener(controller);
+        
     }
-
-    private void updateEnrollmentData(String filter) {
+  private void updateEnrollmentData(String filter) {
         int[] enrollments = getEnrollmentsByFilter(filter);
         // Process the enrollments data as needed
     }
@@ -347,6 +383,6 @@ class Attendance {
     }
 
     public int getCount() {
-        return count;
+        return count;*/
     }
 }

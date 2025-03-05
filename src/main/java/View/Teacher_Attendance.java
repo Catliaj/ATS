@@ -51,6 +51,8 @@ public class Teacher_Attendance extends JFrame {
 	public JButton btn_Clear;
 	private JComboBox comboBox;
 	StudentQuery populate = new StudentQuery();
+	private JLabel lbl_Remarks;
+	private JTextField textField_Remarks;
 	/**
 	 * Launch the application.
 	 */
@@ -158,15 +160,16 @@ public class Teacher_Attendance extends JFrame {
 		lbl_Class.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Class.setForeground(Color.WHITE);
 		lbl_Class.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Class.setBounds(330, 158, 131, 35);
+		lbl_Class.setBounds(336, 102, 131, 35);
 		panel.add(lbl_Class);
 		
 		textField_Class = new JTextField();
+		textField_Class.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Class.setForeground(new Color(57, 57, 57));
-		textField_Class.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Class.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_Class.setColumns(10);
 		textField_Class.setBackground(new Color(255, 242, 226));
-		textField_Class.setBounds(330, 186, 224, 25);
+		textField_Class.setBounds(336, 130, 142, 25);
 		panel.add(textField_Class);
 		
 		
@@ -175,15 +178,15 @@ public class Teacher_Attendance extends JFrame {
 		lbl_StudentName.setVerticalAlignment(SwingConstants.TOP);
 		lbl_StudentName.setForeground(Color.WHITE);
 		lbl_StudentName.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_StudentName.setBounds(330, 220, 131, 35);
+		lbl_StudentName.setBounds(336, 187, 131, 35);
 		panel.add(lbl_StudentName);
 		
 		textField_StudentName = new JTextField();
 		textField_StudentName.setForeground(new Color(57, 57, 57));
-		textField_StudentName.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_StudentName.setFont(new Font("Bahnschrift", Font.BOLD, 18));
 		textField_StudentName.setColumns(10);
 		textField_StudentName.setBackground(new Color(255, 242, 226));
-		textField_StudentName.setBounds(330, 249, 224, 25);
+		textField_StudentName.setBounds(336, 214, 215, 25);
 		panel.add(textField_StudentName);
 		
 		
@@ -192,15 +195,16 @@ public class Teacher_Attendance extends JFrame {
 		lbl_Date.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Date.setForeground(Color.WHITE);
 		lbl_Date.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Date.setBounds(330, 284, 131, 35);
+		lbl_Date.setBounds(336, 271, 131, 35);
 		panel.add(lbl_Date);
 		
 		textField_Date = new JTextField();
+		textField_Date.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Date.setForeground(new Color(57, 57, 57));
-		textField_Date.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Date.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_Date.setColumns(10);
 		textField_Date.setBackground(new Color(255, 242, 226));
-		textField_Date.setBounds(330, 312, 224, 25);
+		textField_Date.setBounds(336, 299, 152, 25);
 		panel.add(textField_Date);
 		
 		
@@ -209,15 +213,16 @@ public class Teacher_Attendance extends JFrame {
 		lbl_CheckIn.setVerticalAlignment(SwingConstants.TOP);
 		lbl_CheckIn.setForeground(Color.WHITE);
 		lbl_CheckIn.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_CheckIn.setBounds(330, 346, 131, 35);
+		lbl_CheckIn.setBounds(336, 355, 131, 35);
 		panel.add(lbl_CheckIn);
 		
 		textField_CheckIn = new JTextField();
+		textField_CheckIn.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_CheckIn.setForeground(new Color(57, 57, 57));
-		textField_CheckIn.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_CheckIn.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_CheckIn.setColumns(10);
 		textField_CheckIn.setBackground(new Color(255, 242, 226));
-		textField_CheckIn.setBounds(330, 377, 224, 25);
+		textField_CheckIn.setBounds(336, 383, 131, 25);
 		panel.add(textField_CheckIn);
 		
 		
@@ -226,15 +231,16 @@ public class Teacher_Attendance extends JFrame {
 		lbl_CheckOut.setVerticalAlignment(SwingConstants.TOP);
 		lbl_CheckOut.setForeground(Color.WHITE);
 		lbl_CheckOut.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_CheckOut.setBounds(330, 410, 131, 35);
+		lbl_CheckOut.setBounds(336, 440, 131, 35);
 		panel.add(lbl_CheckOut);
 		
 		textField_CheckOut = new JTextField();
+		textField_CheckOut.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_CheckOut.setForeground(new Color(57, 57, 57));
-		textField_CheckOut.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_CheckOut.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_CheckOut.setColumns(10);
 		textField_CheckOut.setBackground(new Color(255, 242, 226));
-		textField_CheckOut.setBounds(330, 442, 224, 25);
+		textField_CheckOut.setBounds(336, 468, 131, 25);
 		panel.add(textField_CheckOut);
 		
 		
@@ -245,7 +251,7 @@ public class Teacher_Attendance extends JFrame {
 		btn_Update.setFocusPainted(false);
 		btn_Update.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Update.setBackground(new Color(174, 122, 52));
-		btn_Update.setBounds(395, 499, 100, 30);
+		btn_Update.setBounds(324, 608, 116, 30);
 		panel.add(btn_Update);
 		
 	    btn_Delete = new JButton("Delete");
@@ -254,7 +260,7 @@ public class Teacher_Attendance extends JFrame {
 		btn_Delete.setFocusPainted(false);
 		btn_Delete.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Delete.setBackground(new Color(174, 122, 52));
-		btn_Delete.setBounds(395, 539, 100, 30);
+		btn_Delete.setBounds(449, 608, 116, 30);
 		panel.add(btn_Delete);
 		
 	    btn_Clear = new JButton("Clear");
@@ -263,7 +269,7 @@ public class Teacher_Attendance extends JFrame {
 		btn_Clear.setFocusPainted(false);
 		btn_Clear.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Clear.setBackground(new Color(174, 122, 52));
-		btn_Clear.setBounds(395, 579, 100, 30);
+		btn_Clear.setBounds(386, 648, 116, 30);
 		panel.add(btn_Clear);
 		
 		
@@ -294,14 +300,15 @@ public class Teacher_Attendance extends JFrame {
 		table.setFont(new Font("Bahnschrift", Font.BOLD, 15));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
 			},
 			new String[] {
-				"Class", "Student Name", "Date", "Check-in", "Check-out"
+				"Class", "Student Name", "Date", "Check-in", "Check-out", "Remarks"
 			}
 		));
 		
@@ -375,6 +382,22 @@ public class Teacher_Attendance extends JFrame {
 		lbl_TeacherIcon_2.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
 		lbl_TeacherIcon_2.setBounds(1169, 66, 76, 47);
 		panel.add(lbl_TeacherIcon_2);
+		
+		lbl_Remarks = new JLabel("Remarks:");
+		lbl_Remarks.setVerticalAlignment(SwingConstants.TOP);
+		lbl_Remarks.setForeground(Color.WHITE);
+		lbl_Remarks.setFont(new Font("Brush Script MT", Font.BOLD, 24));
+		lbl_Remarks.setBounds(336, 520, 131, 35);
+		panel.add(lbl_Remarks);
+		
+		textField_Remarks = new JTextField();
+		textField_Remarks.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_Remarks.setForeground(new Color(57, 57, 57));
+		textField_Remarks.setFont(new Font("Bahnschrift", Font.BOLD, 20));
+		textField_Remarks.setColumns(10);
+		textField_Remarks.setBackground(new Color(255, 242, 226));
+		textField_Remarks.setBounds(336, 548, 131, 25);
+		panel.add(textField_Remarks);
 		
 		
 		

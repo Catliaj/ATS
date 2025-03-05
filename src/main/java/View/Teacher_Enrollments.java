@@ -3,6 +3,7 @@ package View;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.time.Year;
 import java.util.Random;
 
@@ -76,7 +77,7 @@ public class Teacher_Enrollments extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lbl_Background = new JLabel("");
-		lbl_Background.setIcon(new ImageIcon(Teacher_Enrollments.class.getResource("/Resources/Background for Enrollment and Student Checkin_Checkout.png")));
+		lbl_Background.setIcon(new ImageIcon(Teacher_Enrollments.class.getResource("/Resources/Background for Enrollment.png")));
 		lbl_Background.setBounds(0, 0, 1320, 745);
 		contentPane.add(lbl_Background);
 		
@@ -88,7 +89,15 @@ public class Teacher_Enrollments extends JFrame {
 		panel.setLayout(null);
 	    
 	    picture = new JLabel("");
-	    picture.setBounds(404, 147, 124, 122);
+	    picture.setBounds(378, 156, 127, 127);
+	    
+	    ImageIcon originalIcon = new ImageIcon("");
+	    
+	    Image scaledImage = originalIcon.getImage().getScaledInstance(picture.getWidth(), picture.getHeight(), Image.SCALE_SMOOTH);
+	    ImageIcon resizedIcon = new ImageIcon(scaledImage);
+
+	    picture.setIcon(resizedIcon);
+	    
 	    panel.add(picture);
 		
 	    btn_Dashboard = new JButton("Dashboard");
@@ -157,7 +166,7 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_StudentImage.setVerticalAlignment(SwingConstants.TOP);
 		lbl_StudentImage.setForeground(Color.WHITE);
 		lbl_StudentImage.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_StudentImage.setBounds(546, 183, 131, 35);
+		lbl_StudentImage.setBounds(524, 190, 131, 35);
 		panel.add(lbl_StudentImage);
 		
 		textField_Image = new JTextField();
@@ -165,7 +174,7 @@ public class Teacher_Enrollments extends JFrame {
 		textField_Image.setFont(new Font("Bahnschrift", Font.BOLD, 15));
 		textField_Image.setColumns(10);
 		textField_Image.setBackground(new Color(255, 242, 226));
-		textField_Image.setBounds(546, 216, 313, 25);
+		textField_Image.setBounds(524, 221, 360, 25);
 		panel.add(textField_Image);
 		
 	    btn_BrowseImg = new JButton("Browse");
@@ -174,7 +183,7 @@ public class Teacher_Enrollments extends JFrame {
 		btn_BrowseImg.setFocusPainted(false);
 		btn_BrowseImg.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_BrowseImg.setBackground(new Color(174, 122, 52));
-		btn_BrowseImg.setBounds(770, 251, 90, 20);
+		btn_BrowseImg.setBounds(794, 251, 90, 20);
 		panel.add(btn_BrowseImg);
 		
 		
@@ -183,15 +192,16 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_SRCode.setVerticalAlignment(SwingConstants.TOP);
 		lbl_SRCode.setForeground(Color.WHITE);
 		lbl_SRCode.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_SRCode.setBounds(339, 308, 131, 35);
+		lbl_SRCode.setBounds(339, 330, 131, 35);
 		panel.add(lbl_SRCode);
 		
 		textField_SRCode = new JTextField();
+		textField_SRCode.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_SRCode.setForeground(new Color(57, 57, 57));
-		textField_SRCode.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_SRCode.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_SRCode.setColumns(10);
 		textField_SRCode.setBackground(new Color(255, 242, 226));
-		textField_SRCode.setBounds(339, 339, 114, 32);
+		textField_SRCode.setBounds(339, 359, 114, 32);
 		panel.add(textField_SRCode);
 		
 		
@@ -200,15 +210,15 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_FirstName.setVerticalAlignment(SwingConstants.TOP);
 		lbl_FirstName.setForeground(Color.WHITE);
 		lbl_FirstName.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_FirstName.setBounds(339, 386, 131, 35);
+		lbl_FirstName.setBounds(339, 416, 131, 35);
 		panel.add(lbl_FirstName);
 		
 		textField_FirstName = new JTextField();
 		textField_FirstName.setForeground(new Color(57, 57, 57));
-		textField_FirstName.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_FirstName.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_FirstName.setColumns(10);
 		textField_FirstName.setBackground(new Color(255, 242, 226));
-		textField_FirstName.setBounds(339, 416, 172, 32);
+		textField_FirstName.setBounds(339, 445, 172, 32);
 		panel.add(textField_FirstName);
 		
 		
@@ -217,15 +227,16 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_MidIn.setVerticalAlignment(SwingConstants.TOP);
 		lbl_MidIn.setForeground(Color.WHITE);
 		lbl_MidIn.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_MidIn.setBounds(571, 386, 147, 35);
+		lbl_MidIn.setBounds(554, 416, 147, 35);
 		panel.add(lbl_MidIn);
 		
 		textField_MidIn = new JTextField();
+		textField_MidIn.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_MidIn.setForeground(new Color(57, 57, 57));
-		textField_MidIn.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_MidIn.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_MidIn.setColumns(10);
 		textField_MidIn.setBackground(new Color(255, 242, 226));
-		textField_MidIn.setBounds(571, 416, 56, 32);
+		textField_MidIn.setBounds(554, 445, 42, 32);
 		panel.add(textField_MidIn);
 		
 		
@@ -234,15 +245,15 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_Surname.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Surname.setForeground(Color.WHITE);
 		lbl_Surname.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Surname.setBounds(747, 385, 96, 35);
+		lbl_Surname.setBounds(747, 416, 96, 35);
 		panel.add(lbl_Surname);
 		
 		textField_Surname = new JTextField();
 		textField_Surname.setForeground(new Color(57, 57, 57));
-		textField_Surname.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Surname.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_Surname.setColumns(10);
 		textField_Surname.setBackground(new Color(255, 242, 226));
-		textField_Surname.setBounds(747, 416, 172, 32);
+		textField_Surname.setBounds(747, 445, 172, 32);
 		panel.add(textField_Surname);
 		
 		
@@ -251,15 +262,16 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_Section.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Section.setForeground(Color.WHITE);
 		lbl_Section.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Section.setBounds(339, 463, 131, 35);
+		lbl_Section.setBounds(339, 504, 131, 35);
 		panel.add(lbl_Section);
 		
 		textField_Section = new JTextField();
+		textField_Section.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Section.setForeground(new Color(57, 57, 57));
-		textField_Section.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Section.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_Section.setColumns(10);
 		textField_Section.setBackground(new Color(255, 242, 226));
-		textField_Section.setBounds(339, 493, 113, 32);
+		textField_Section.setBounds(339, 532, 113, 32);
 		panel.add(textField_Section);
 		
 		
@@ -268,15 +280,15 @@ public class Teacher_Enrollments extends JFrame {
 		lbl_Email.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Email.setForeground(Color.WHITE);
 		lbl_Email.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Email.setBounds(339, 540, 131, 35);
+		lbl_Email.setBounds(554, 504, 131, 35);
 		panel.add(lbl_Email);
 		
 		textField_email = new JTextField();
 		textField_email.setForeground(new Color(57, 57, 57));
-		textField_email.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_email.setFont(new Font("Bahnschrift", Font.BOLD, 20));
 		textField_email.setColumns(10);
 		textField_email.setBackground(new Color(255, 242, 226));
-		textField_email.setBounds(339, 569, 296, 32);
+		textField_email.setBounds(554, 532, 365, 32);
 		panel.add(textField_email);
 		
 		
@@ -287,7 +299,7 @@ public class Teacher_Enrollments extends JFrame {
 		btn_Confirm.setFocusPainted(false);
 		btn_Confirm.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Confirm.setBackground(new Color(174, 122, 52));
-		btn_Confirm.setBounds(490, 633, 133, 38);
+		btn_Confirm.setBounds(490, 627, 133, 38);
 		panel.add(btn_Confirm);
 		
 	    btn_Clear = new JButton("Clear");
@@ -296,7 +308,7 @@ public class Teacher_Enrollments extends JFrame {
 		btn_Clear.setFocusPainted(false);
 		btn_Clear.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Clear.setBackground(new Color(174, 122, 52));
-		btn_Clear.setBounds(636, 633, 131, 38);
+		btn_Clear.setBounds(636, 627, 131, 38);
 		panel.add(btn_Clear);
 		
 		
@@ -307,15 +319,15 @@ public class Teacher_Enrollments extends JFrame {
 		
 		textField_SRCode_Confirm = new JTextField();
 		textField_SRCode_Confirm.setForeground(new Color(57, 57, 57));
-		textField_SRCode_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_SRCode_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 17));
 		textField_SRCode_Confirm.setColumns(10);
 		textField_SRCode_Confirm.setBackground(new Color(255, 242, 226));
-		textField_SRCode_Confirm.setBounds(998, 421, 132, 32);
+		textField_SRCode_Confirm.setBounds(998, 421, 114, 32);
 		panel.add(textField_SRCode_Confirm);
 		
 		textField_Name_Confirm = new JTextField();
 		textField_Name_Confirm.setForeground(new Color(57, 57, 57));
-		textField_Name_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Name_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 17));
 		textField_Name_Confirm.setColumns(10);
 		textField_Name_Confirm.setBackground(new Color(255, 242, 226));
 		textField_Name_Confirm.setBounds(998, 466, 265, 32);
@@ -323,19 +335,29 @@ public class Teacher_Enrollments extends JFrame {
 		
 		textField_Section_Confirm = new JTextField();
 		textField_Section_Confirm.setForeground(new Color(57, 57, 57));
-		textField_Section_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Section_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 17));
 		textField_Section_Confirm.setColumns(10);
 		textField_Section_Confirm.setBackground(new Color(255, 242, 226));
-		textField_Section_Confirm.setBounds(998, 510, 178, 32);
+		textField_Section_Confirm.setBounds(998, 510, 127, 32);
 		panel.add(textField_Section_Confirm);
 		
 		textField_Email_Confirm = new JTextField();
+		textField_Email_Confirm.setText("");
 		textField_Email_Confirm.setForeground(new Color(57, 57, 57));
-		textField_Email_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Email_Confirm.setFont(new Font("Bahnschrift", Font.BOLD, 14));
 		textField_Email_Confirm.setColumns(10);
 		textField_Email_Confirm.setBackground(new Color(255, 242, 226));
 		textField_Email_Confirm.setBounds(998, 555, 266, 32);
 		panel.add(textField_Email_Confirm);
+		
+		JButton btn_ViewID = new JButton("View ID");
+		btn_ViewID.setForeground(new Color(255, 214, 0));
+		btn_ViewID.setFont(new Font("Bahnschrift", Font.BOLD, 13));
+		btn_ViewID.setFocusPainted(false);
+		btn_ViewID.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
+		btn_ViewID.setBackground(new Color(174, 122, 52));
+		btn_ViewID.setBounds(1063, 608, 133, 38);
+		panel.add(btn_ViewID);
 		
 	    btn_Enroll = new JButton("Enroll");
 		btn_Enroll.setForeground(new Color(255, 214, 0));
@@ -343,7 +365,7 @@ public class Teacher_Enrollments extends JFrame {
 		btn_Enroll.setFocusPainted(false);
 		btn_Enroll.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Enroll.setBackground(new Color(174, 122, 52));
-		btn_Enroll.setBounds(1064, 626, 133, 38);
+		btn_Enroll.setBounds(1064, 655, 133, 38);
 		panel.add(btn_Enroll);
 		
 		

@@ -159,8 +159,9 @@ public class Teacher_Subjects extends JFrame {
 		panel.add(lbl_Subject);
 		
 		textField_Subject = new JTextField();
+		textField_Subject.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Subject.setForeground(new Color(57, 57, 57));
-		textField_Subject.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Subject.setFont(new Font("Bahnschrift", Font.BOLD, 22));
 		textField_Subject.setColumns(10);
 		textField_Subject.setBackground(new Color(255, 242, 226));
 		textField_Subject.setBounds(336, 181, 215, 32);
@@ -172,15 +173,16 @@ public class Teacher_Subjects extends JFrame {
 		lbl_Start.setVerticalAlignment(SwingConstants.TOP);
 		lbl_Start.setForeground(Color.WHITE);
 		lbl_Start.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_Start.setBounds(336, 249, 131, 35);
+		lbl_Start.setBounds(357, 249, 131, 35);
 		panel.add(lbl_Start);
 		
 		textField_Start = new JTextField();
+		textField_Start.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Start.setForeground(new Color(57, 57, 57));
-		textField_Start.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_Start.setFont(new Font("Bahnschrift", Font.BOLD, 25));
 		textField_Start.setColumns(10);
 		textField_Start.setBackground(new Color(255, 242, 226));
-		textField_Start.setBounds(336, 277, 178, 32);
+		textField_Start.setBounds(357, 277, 178, 32);
 		panel.add(textField_Start);
 		
 		
@@ -189,15 +191,16 @@ public class Teacher_Subjects extends JFrame {
 		lbl_End.setVerticalAlignment(SwingConstants.TOP);
 		lbl_End.setForeground(Color.WHITE);
 		lbl_End.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-		lbl_End.setBounds(336, 338, 147, 35);
+		lbl_End.setBounds(357, 338, 147, 35);
 		panel.add(lbl_End);
 		
 		textField_End = new JTextField();
+		textField_End.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_End.setForeground(new Color(57, 57, 57));
-		textField_End.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+		textField_End.setFont(new Font("Bahnschrift", Font.BOLD, 25));
 		textField_End.setColumns(10);
 		textField_End.setBackground(new Color(255, 242, 226));
-		textField_End.setBounds(336, 368, 178, 32);
+		textField_End.setBounds(357, 368, 178, 32);
 		panel.add(textField_End);
 		
 		
@@ -208,7 +211,7 @@ public class Teacher_Subjects extends JFrame {
 		btn_Update.setFocusPainted(false);
 		btn_Update.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Update.setBackground(new Color(174, 122, 52));
-		btn_Update.setBounds(324, 480, 116, 33);
+		btn_Update.setBounds(324, 507, 116, 32);
 		panel.add(btn_Update);
 		
 		btn_Delete = new JButton("Delete");
@@ -217,7 +220,7 @@ public class Teacher_Subjects extends JFrame {
 		btn_Delete.setFocusPainted(false);
 		btn_Delete.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Delete.setBackground(new Color(174, 122, 52));
-		btn_Delete.setBounds(449, 480, 116, 32);
+		btn_Delete.setBounds(449, 507, 116, 32);
 		panel.add(btn_Delete);
 		
 	    btn_Clear = new JButton("Clear");
@@ -226,7 +229,7 @@ public class Teacher_Subjects extends JFrame {
 		btn_Clear.setFocusPainted(false);
 		btn_Clear.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Clear.setBackground(new Color(174, 122, 52));
-		btn_Clear.setBounds(390, 539, 116, 32);
+		btn_Clear.setBounds(390, 577, 116, 32);
 		panel.add(btn_Clear);
 		
 		
@@ -326,7 +329,7 @@ public class Teacher_Subjects extends JFrame {
 		btn_Add.setFocusPainted(false);
 		btn_Add.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
 		btn_Add.setBackground(new Color(174, 122, 52));
-		btn_Add.setBounds(390, 437, 116, 33);
+		btn_Add.setBounds(390, 455, 116, 32);
 		panel.add(btn_Add);
 		
 		//side panel action button

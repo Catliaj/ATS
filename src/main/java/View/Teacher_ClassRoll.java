@@ -30,7 +30,6 @@ public JButton btn_Enrollment;
 public JButton btn_Classes;
 public JButton btn_Exit;
 private JLabel picture;
-private 
 
 StudentQuery populate = new StudentQuery();
 
@@ -71,6 +70,14 @@ public Teacher_ClassRoll() {
 
     picture = new JLabel("");
     picture.setBounds(368, 66, 124, 124);
+    
+    ImageIcon originalIcon = new ImageIcon("");
+    
+    Image scaledImage = originalIcon.getImage().getScaledInstance(picture.getWidth(), picture.getHeight(), Image.SCALE_SMOOTH);
+    ImageIcon resizedIcon = new ImageIcon(scaledImage);
+
+    picture.setIcon(resizedIcon);
+    
     panel.add(picture);
 
     btn_Dashboard = new JButton("Dashboard");
@@ -137,82 +144,85 @@ public Teacher_ClassRoll() {
     lbl_SRCode.setVerticalAlignment(SwingConstants.TOP);
     lbl_SRCode.setForeground(Color.WHITE);
     lbl_SRCode.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_SRCode.setBounds(316, 221, 131, 35);
+    lbl_SRCode.setBounds(331, 221, 131, 35);
     panel.add(lbl_SRCode);
 
     textField_SRCode = new JTextField();
+    textField_SRCode.setHorizontalAlignment(SwingConstants.CENTER);
     textField_SRCode.setForeground(new Color(57, 57, 57));
-    textField_SRCode.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+    textField_SRCode.setFont(new Font("Bahnschrift", Font.BOLD, 20));
     textField_SRCode.setColumns(10);
     textField_SRCode.setBackground(new Color(255, 242, 226));
-    textField_SRCode.setBounds(316, 249, 212, 25);
+    textField_SRCode.setBounds(331, 249, 105, 25);
     panel.add(textField_SRCode);
 
     JLabel lbl_FirstName = new JLabel("First Name:");
     lbl_FirstName.setVerticalAlignment(SwingConstants.TOP);
     lbl_FirstName.setForeground(Color.WHITE);
     lbl_FirstName.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_FirstName.setBounds(316, 283, 131, 35);
+    lbl_FirstName.setBounds(331, 283, 131, 35);
     panel.add(lbl_FirstName);
 
     textField_FirstName = new JTextField();
     textField_FirstName.setForeground(new Color(57, 57, 57));
-    textField_FirstName.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+    textField_FirstName.setFont(new Font("Bahnschrift", Font.BOLD, 20));
     textField_FirstName.setColumns(10);
     textField_FirstName.setBackground(new Color(255, 242, 226));
-    textField_FirstName.setBounds(316, 312, 212, 25);
+    textField_FirstName.setBounds(331, 312, 122, 25);
     panel.add(textField_FirstName);
 
     JLabel lbl_MidIn = new JLabel("Middle Initial:");
     lbl_MidIn.setVerticalAlignment(SwingConstants.TOP);
     lbl_MidIn.setForeground(Color.WHITE);
     lbl_MidIn.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_MidIn.setBounds(316, 347, 152, 35);
+    lbl_MidIn.setBounds(331, 347, 152, 35);
     panel.add(lbl_MidIn);
 
     textField_MidIn = new JTextField();
+    textField_MidIn.setHorizontalAlignment(SwingConstants.CENTER);
     textField_MidIn.setForeground(new Color(57, 57, 57));
-    textField_MidIn.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+    textField_MidIn.setFont(new Font("Bahnschrift", Font.BOLD, 20));
     textField_MidIn.setColumns(10);
     textField_MidIn.setBackground(new Color(255, 242, 226));
-    textField_MidIn.setBounds(316, 375, 212, 25);
+    textField_MidIn.setBounds(331, 375, 30, 25);
     panel.add(textField_MidIn);
 
     JLabel lbl_Surname = new JLabel("Surname:");
     lbl_Surname.setVerticalAlignment(SwingConstants.TOP);
     lbl_Surname.setForeground(Color.WHITE);
     lbl_Surname.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_Surname.setBounds(316, 409, 131, 35);
+    lbl_Surname.setBounds(331, 409, 131, 35);
     panel.add(lbl_Surname);
 
     textField_Surname = new JTextField();
     textField_Surname.setForeground(new Color(57, 57, 57));
-    textField_Surname.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+    textField_Surname.setFont(new Font("Bahnschrift", Font.BOLD, 20));
     textField_Surname.setColumns(10);
     textField_Surname.setBackground(new Color(255, 242, 226));
-    textField_Surname.setBounds(316, 440, 212, 25);
+    textField_Surname.setBounds(331, 440, 152, 25);
     panel.add(textField_Surname);
 
     JLabel lbl_Section = new JLabel("Section:");
     lbl_Section.setVerticalAlignment(SwingConstants.TOP);
     lbl_Section.setForeground(Color.WHITE);
     lbl_Section.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_Section.setBounds(316, 473, 131, 35);
+    lbl_Section.setBounds(331, 473, 131, 35);
     panel.add(lbl_Section);
 
     textField_Section = new JTextField();
+    textField_Section.setHorizontalAlignment(SwingConstants.CENTER);
     textField_Section.setForeground(new Color(57, 57, 57));
-    textField_Section.setFont(new Font("Bahnschrift", Font.BOLD, 15));
+    textField_Section.setFont(new Font("Bahnschrift", Font.BOLD, 20));
     textField_Section.setColumns(10);
     textField_Section.setBackground(new Color(255, 242, 226));
-    textField_Section.setBounds(316, 505, 212, 25);
+    textField_Section.setBounds(331, 505, 161, 25);
     panel.add(textField_Section);
 
     JLabel lbl_Email = new JLabel("Email:");
     lbl_Email.setVerticalAlignment(SwingConstants.TOP);
     lbl_Email.setForeground(Color.WHITE);
     lbl_Email.setFont(new Font("Brush Script MT", Font.BOLD, 24));
-    lbl_Email.setBounds(316, 540, 131, 35);
+    lbl_Email.setBounds(331, 540, 131, 35);
     panel.add(lbl_Email);
 
     textField_Email = new JTextField();
@@ -220,7 +230,7 @@ public Teacher_ClassRoll() {
     textField_Email.setFont(new Font("Bahnschrift", Font.BOLD, 15));
     textField_Email.setColumns(10);
     textField_Email.setBackground(new Color(255, 242, 226));
-    textField_Email.setBounds(316, 572, 212, 25);
+    textField_Email.setBounds(308, 572, 235, 25);
     panel.add(textField_Email);
 
     JButton btn_Update = new JButton("Update");
@@ -322,8 +332,17 @@ public Teacher_ClassRoll() {
     btn_ViewQR.setFocusPainted(false);
     btn_ViewQR.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
     btn_ViewQR.setBackground(new Color(174, 122, 52));
-    btn_ViewQR.setBounds(376, 685, 92, 20);
+    btn_ViewQR.setBounds(326, 685, 92, 20);
     panel.add(btn_ViewQR);
+    
+    JButton btn_ViewID = new JButton("View ID");
+	btn_ViewID.setForeground(new Color(255, 214, 0));
+	btn_ViewID.setFont(new Font("Bahnschrift", Font.BOLD, 13));
+	btn_ViewID.setFocusPainted(false);
+	btn_ViewID.setBorder(BorderFactory.createLineBorder(new Color(255, 214, 0), 2));
+	btn_ViewID.setBackground(new Color(174, 122, 52));
+	btn_ViewID.setBounds(429, 685, 92, 20);
+	panel.add(btn_ViewID);
 
 
 	btn_ViewQR.addActionListener(new ActionListener() {
@@ -399,6 +418,7 @@ public Teacher_ClassRoll() {
 	lbl_TeacherIcon_2.setIcon(new ImageIcon(Login_Menu.class.getResource("/Resources/Teacher_Icon.png")));
 	lbl_TeacherIcon_2.setBounds(1169, 66, 76, 47);
 	panel.add(lbl_TeacherIcon_2);
+	
 
     SidePanelButtonActionListener controller = new SidePanelButtonActionListener(this);
     btn_Dashboard.addActionListener(controller);
